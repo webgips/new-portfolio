@@ -1,7 +1,7 @@
 <template lang="pug">
   .aside
     .aside__photo
-      img.aside__photo-img(src="../assets/img/avatar.png" alt="Avatar")
+      img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
     nav.nav
       router-link.nav__link(to='/' exact) About
       router-link.nav__link(to='/works' exact) Work
@@ -35,6 +35,7 @@ export default {
     &-img{
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
   .nav{

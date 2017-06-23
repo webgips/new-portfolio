@@ -2,6 +2,7 @@
   #app
     sidebar
     .content
+      //- transition(name="fade")
       router-view
 </template>
 
@@ -47,6 +48,7 @@ body{
   &__title{
     color: #fff;
     font-weight: normal;
+    font-family: "proxima_novasemibold";
     display: inline;   
     border-bottom: 3px solid #ff4ba8;
     // margin-bottom: 110px;
