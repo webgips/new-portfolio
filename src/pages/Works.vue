@@ -1,6 +1,6 @@
 <template lang="pug">
   .about
-    h1.content__title {{name}}
+    h2.content__title {{name}}
 </template>
 
 <script>

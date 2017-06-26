@@ -2,8 +2,8 @@
   #app
     sidebar
     .content
-      //- transition(name="fade")
-      router-view
+      transition(name="fade" type="")
+        router-view
 </template>
 
 <script>
@@ -47,6 +47,7 @@ body{
   padding: 120px 0 50px 70px;
   &__title{
     color: #fff;
+    font-size: 44px;
     font-weight: normal;
     font-family: "proxima_novasemibold";
     display: inline;   

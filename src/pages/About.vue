@@ -1,6 +1,6 @@
 <template lang="pug">
   .about
-    h1.content__title {{name}}
+    h2.content__title {{name}}
     .about__content
       .about__name Maxim Markov
       .about__job Frontend Developer
@@ -60,7 +60,7 @@ export default {
   }
   &__btn{
     height: 70px;
-    background-color: rgba(#000,.4);
+    background-color: rgba(#fff,.1);
     text-decoration: none;
     padding: 0 40px;
     color: #fff;

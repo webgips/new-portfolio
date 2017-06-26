@@ -1,6 +1,6 @@
 <template lang="pug">
   .contact
-    h1.content__title {{name}}
+    h2.content__title {{name}}
     .contact__content
       form.contact__form
         .contact__text Project brief description
