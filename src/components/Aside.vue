@@ -22,7 +22,7 @@ export default {
   background-color: rgba(#0a112a,.6);
   width: 25%;
   height: 100%;
-  padding: 120px 0 50px;
+  padding: 80px 0 50px;
   display: flex;
   flex-direction: column;
   &__photo{

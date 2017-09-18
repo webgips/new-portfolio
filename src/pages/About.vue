@@ -36,18 +36,18 @@ export default {
   }
   &__name{
     font-family: "proxima_novasemibold";
-    font-size: 80px;
+    font-size: 40px;
     margin-bottom: 20px;
   }
   &__job{
-    font-size: 42px;
+    font-size: 32px;
     font-family:  "proxima_nova_rgregular";
     color: #ff68b6;
     margin-bottom: 40px;
   }
   &__desc{
     font-family: "proxima_nova_thinthin";
-    font-size: 32px;
+    font-size: 24px;
     max-width: 600px;
     opacity: .6;
     margin-bottom: 40px;
@@ -64,7 +64,7 @@ export default {
     text-decoration: none;
     padding: 0 40px;
     color: #fff;
-    font-size: 28px;
+    font-size: 24px;
     display: flex;
     align-items: center;
     &:hover{

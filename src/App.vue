@@ -13,6 +13,14 @@ export default {
     sidebar
   },  
   name: 'app', 
+  metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Maxim Markov portfolio',
+      meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ]
+  }
 }
 </script>
 
@@ -44,10 +52,10 @@ body{
 .content{
   background-color: rgba(#0a112a,.8);
   flex: 1;
-  padding: 120px 0 50px 70px;
+  padding: 80px 0 50px 70px;
   &__title{
     color: #fff;
-    font-size: 44px;
+    font-size: 32px;
     font-weight: normal;
     font-family: "proxima_novasemibold";
     display: inline;   

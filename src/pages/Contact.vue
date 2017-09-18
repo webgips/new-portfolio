@@ -40,16 +40,3 @@ export default {
   }
 }
 </style>
-.Rectangle_2 {
-  border-width: 0.601px;
-  border-color: rgb(255, 255, 255);
-  border-style: solid;
-  background-color: rgb(30, 26, 52);
-  opacity: 0.329;
-  position: absolute;
-  left: 387px;
-  top: 317px;
-  width: 997px;
-  height: 245px;
-  z-index: 28;
-}
