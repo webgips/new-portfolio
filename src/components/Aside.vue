@@ -1,7 +1,8 @@
 <template lang="pug">
   .aside
     .aside__photo
-      img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
+      .aside__photo-wrap
+        img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
     nav.nav
       router-link.nav__link(to='/' exact) About
       router-link.nav__link(to='/works' exact) Work
@@ -26,12 +27,19 @@ export default {
   display: flex;
   flex-direction: column;
   &__photo{
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 65px;
-    margin-left: 70px;
+    height: 30%;
+    min-height: 150px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-wrap{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+
+    }
     &-img{
       width: 100%;
       height: 100%;
