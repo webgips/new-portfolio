@@ -49,14 +49,15 @@ export default {
   .nav{
     display: flex;
     flex-direction: column;
+    height: 60%;
     &__link{      
-      height: 100px;
+      height: 20%;
       display: flex;
       align-items: center;
       // margin-bottom: 20px;
       padding-left: 70px;
       color: #fff;
-      font-size: 32px;
+      font-size: 24px;
       text-decoration: none;
       position: relative;
       &:hover{

@@ -52,7 +52,7 @@ body{
 .content{
   background-color: rgba(#0a112a,.8);
   flex: 1;
-  padding: 80px 0 50px 70px;
+  padding: 80px 60px;
   &__title{
     color: #fff;
     font-size: 32px;
