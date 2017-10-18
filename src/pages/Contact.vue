@@ -1,5 +1,5 @@
 <template lang="pug">
-  .contact
+  .contact.content
     h2.content__title {{name}}
     .contact__content
       form.contact__form#contact__form(v-on:submit="submitForm")

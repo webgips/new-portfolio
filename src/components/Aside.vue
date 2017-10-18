@@ -2,7 +2,7 @@
   .aside
     .aside__photo
       .aside__photo-wrap
-        img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
+        //- img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
     nav.nav
       router-link.nav__link(to='/' exact) About
       router-link.nav__link(to='/works' exact) Work

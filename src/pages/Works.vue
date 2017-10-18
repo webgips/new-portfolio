@@ -1,5 +1,5 @@
 <template lang="pug">
-  .about
+  .works.content
     h2.content__title {{name}}
 </template>
 

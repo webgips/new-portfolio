@@ -1,8 +1,9 @@
 <template lang="pug">
   #app
     sidebar
-    .content
-      transition(name="fade" type="")
+    
+    .content__wrap
+      transition(name="rotate" type="")
         router-view
 </template>
 
@@ -50,9 +51,18 @@ body{
     color: #fff;
 }
 .content{
-  background-color: rgba(#0a112a,.8);
-  flex: 1;
+  background-color: rgba(#0a112a,1);
+  // flex: 1;
   padding: 80px 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &__wrap{
+    position: relative;
+    flex: 1;
+  }
   &__title{
     color: #fff;
     font-size: 32px;
@@ -63,6 +73,106 @@ body{
     // margin-bottom: 110px;
   }
 }
+// transform-origin: 0 50%;
+.rotate{
+  // &-enter{
+  //    transform: translate3d(0,-100%,0) rotateX(-180deg);
+  //    backface-visibility: hidden;
+  //    // animation: enter  .85s both cubic-bezier(.6,0,.2,1);
+  //    transition: all 2s ease;
+  // }
+  // &-enter-to{
+  //   // opacity: 1;
+  //   transform: translate3d(0,0,0) rotateX(0);
+  //   backface-visibility: hidden;
+  //   transition: all 2s ease;
+  // }
+  // &-leave{
+  //   // opacity: 0;
+  //   transform: translate3d(0,0,0) rotateX(0);
+  //   backface-visibility: hidden;
+  //   transition: all 2s ease;
+  //   // animation: leave  .85s both cubic-bezier(.6,0,.2,1);
+  // }
+  // &-leave-to{
+  //   transform: translate3d(0,100%,0) rotateX(180deg);
+  //   backface-visibility: hidden;
+  //   transition: all 2s ease;
+  // }
+   &-enter{
+     transform: rotateX(-180deg);
+     filter: blur(5px);
+     backface-visibility: hidden;
+     // animation: enter  .85s both cubic-bezier(.6,0,.2,1);
+     transform-style: preserve-3d;
+     transition: all 2s ease;
+  }
+  &-enter-to{
+    // opacity: 1;
+    filter: blur(0);
+    transform: rotateX(0);
+    backface-visibility: hidden;
+    transition: all 2s ease;
+  }
+  &-leave{
+    // opacity: 0;
+    // animation: right 2s ease;
+    transform:  rotateX(0);
+
+    backface-visibility: hidden;
+    transition: all 2s ease;
+    transform-style: preserve-3d;
+    // animation: leave  .85s both cubic-bezier(.6,0,.2,1);
+  }
+  &-leave-to{
+    transform: rotateX(180deg);
+    filter: blur(5px);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+  }
+}
+// @keyframes right{
+//   transform: translate(10vw);
+//   // transition: all 2s ease;
+// }
+// @keyframes  leave {
+
+//   10% {
+//     transform: translate(10vw);
+//     filter: blur(5px);
+//   }
+
+//   100%{
+//     transform: translate3d(10vw,100%,0) rotateX(180deg);
+//     backface-visibility: hidden;
+//   }
+//   // to {
+//   //     opacity: 1;
+//   //     -webkit-transform: translateX(100%) rotateY(90deg);
+//   //     transform: translateX(100%) rotateY(90deg)
+//   // }
+// }
+// @keyframes enter {
+//   from{
+//     transform: translate3d(10vw,100%,0) rotateX(180deg);
+//     filter: blur(5px);
+//   }
+//   90%{
+//     transform: translate3d(10vw,0,0) rotateX(0);
+//     filter: none;
+//   }
+//   100%{
+//     transform: translate3d(0,0,0) rotateX(0);
+//     backface-visibility: hidden;
+    
+//   }
+//   // to {
+//   //     opacity: 1;
+//   //     -webkit-transform: translateX(100%) rotateY(90deg);
+//   //     transform: translateX(100%) rotateY(90deg)
+//   // }
+// }
 
 
 

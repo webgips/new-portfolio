@@ -1,12 +1,12 @@
 <template lang="pug">
-  .about
+  .about.content
     h2.content__title {{name}}
     .about__content
-      .about__name Maxim Markov
-      .about__job Frontend Developer
-      .about__desc 
-        | Currently curating designs for new startups and founders. Also love to code in Laravel and Ruby
-      .about__btns
+      //- .about__name Maxim Markov
+      //- .about__job Frontend Developer
+      //- .about__desc 
+      //-   | Currently curating designs for new startups and founders. Also love to code in Laravel and Ruby
+      //- .about__btns
         router-link.about__btns-hire.about__btn(to='/contact' exact) Hire me
         router-link.about__btns-know.about__btn(to='/works' exact) Know more
 
