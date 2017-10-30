@@ -2,7 +2,7 @@
   .aside
     .aside__photo
       .aside__photo-wrap
-        //- img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
+        img.aside__photo-img(src="../assets/img/avatar.jpg" alt="Avatar")
     nav.nav
       router-link.nav__link(to='/' exact) About
       router-link.nav__link(to='/works' exact) Work
@@ -20,7 +20,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .aside{
-  background-color: rgba(#0a112a,.6);
+  background-color: rgba(#0a112a,.9);
   width: 25%;
   height: 100%;
   padding: 80px 0 50px;

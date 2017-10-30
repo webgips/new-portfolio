@@ -1,0 +1,12 @@
+{
+	"works": [
+		{
+			"name": "Site 1",
+			"imgUrl": "./static/img/32.png"
+		},
+		{
+			"name": "Site 3",
+			"imgUrl": "./static/img/32.png"
+		}
+	]
+}

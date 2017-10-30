@@ -24,13 +24,12 @@ export default {
   data: function () { 
     return {
         name: this.$route.name
-        
       }
   },  
   methods: {
     submitForm: function(e) {
       e.preventDefault();
-      // document.getElementById("contact__form").submit();
+      // document.getElementById("contact__form").submit();/
       var headers = {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -45,19 +44,6 @@ export default {
       },
       // url = 'http://api.mailhandler.ru/message/send/',
       url = './mail.php'
-
-      // fetch(url,{
-      //    method: 'POST',
-      //    headers: headers,
-      //    body: formData
-      // }).then(function(response) {
-      //     // alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
-      //     alert(response.status); // 200
-
-      //     return response.json();
-      //    })
-      //   .catch( alert );   
-
 
       fetch(url,{
          method: 'POST',

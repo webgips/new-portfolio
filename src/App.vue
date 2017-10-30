@@ -3,7 +3,7 @@
     sidebar
     
     .content__wrap
-      transition(name="rotate" type="")
+      transition(name="slide" type="")
         router-view
 </template>
 
@@ -28,30 +28,39 @@ export default {
 <style lang="scss">
 //fonts
 @import "./assets/fonts/fonts.scss";
+@import "./assets/styles/mixins";
 
 *{
   box-sizing: border-box;
 }
+body,html{
+  height: 100%;
+  width: 100%;
+}
 body{
-    height: 100vh;
-    width: 100vw;    
+    // height: 100vh;
+    // width: 100vw;    
+    min-height: 100%;
     // min-height: 800px;    
-    // background: url('./assets/bg.png') no-repeat center;
-    // background-size: cover;
+    background: url('./assets/img/bg.png') no-repeat center;
+    background-size: cover;
     overflow: hidden;
     margin: 0;
     font-family: $proxima-nova-light;
+    // @include laptop{
+    //   height: auto;
+    // }
 }
 #app{
     width: 100%;
     height: 100%;    
-    background: url('./assets/img/glassy-effect.png') no-repeat center;
+    // background: url('./assets/img/glassy-effect.png') no-repeat center;
     background-size: cover;
     display: flex;    
     color: #fff;
 }
 .content{
-  background-color: rgba(#0a112a,1);
+  background-color: rgba(#0a112a,.7);
   // flex: 1;
   padding: 80px 60px;
   position: absolute;
@@ -73,107 +82,36 @@ body{
     // margin-bottom: 110px;
   }
 }
-// transform-origin: 0 50%;
-.rotate{
-  // &-enter{
-  //    transform: translate3d(0,-100%,0) rotateX(-180deg);
-  //    backface-visibility: hidden;
-  //    // animation: enter  .85s both cubic-bezier(.6,0,.2,1);
-  //    transition: all 2s ease;
-  // }
-  // &-enter-to{
-  //   // opacity: 1;
-  //   transform: translate3d(0,0,0) rotateX(0);
-  //   backface-visibility: hidden;
-  //   transition: all 2s ease;
-  // }
-  // &-leave{
-  //   // opacity: 0;
-  //   transform: translate3d(0,0,0) rotateX(0);
-  //   backface-visibility: hidden;
-  //   transition: all 2s ease;
-  //   // animation: leave  .85s both cubic-bezier(.6,0,.2,1);
-  // }
-  // &-leave-to{
-  //   transform: translate3d(0,100%,0) rotateX(180deg);
-  //   backface-visibility: hidden;
-  //   transition: all 2s ease;
-  // }
+.slide{
    &-enter{
-     transform: rotateX(-180deg);
-     filter: blur(5px);
+     transform: translate(0,100%);
      backface-visibility: hidden;
      // animation: enter  .85s both cubic-bezier(.6,0,.2,1);
-     transform-style: preserve-3d;
-     transition: all 2s ease;
+    
+     transition: all 1s ease;
   }
   &-enter-to{
-    // opacity: 1;
-    filter: blur(0);
-    transform: rotateX(0);
+    transform: translate(0,0);
     backface-visibility: hidden;
-    transition: all 2s ease;
+    transition: all 1s ease;
   }
   &-leave{
     // opacity: 0;
     // animation: right 2s ease;
-    transform:  rotateX(0);
+    transform: translate(0,0);
 
     backface-visibility: hidden;
-    transition: all 2s ease;
+    transition: all 1s ease;
     transform-style: preserve-3d;
     // animation: leave  .85s both cubic-bezier(.6,0,.2,1);
   }
   &-leave-to{
-    transform: rotateX(180deg);
-    filter: blur(5px);
-    backface-visibility: hidden;
+    transform: translate(0,-100%);
+    
     transform-style: preserve-3d;
-    transition: all 2s ease;
+    transition: all 1s ease;
   }
 }
-// @keyframes right{
-//   transform: translate(10vw);
-//   // transition: all 2s ease;
-// }
-// @keyframes  leave {
-
-//   10% {
-//     transform: translate(10vw);
-//     filter: blur(5px);
-//   }
-
-//   100%{
-//     transform: translate3d(10vw,100%,0) rotateX(180deg);
-//     backface-visibility: hidden;
-//   }
-//   // to {
-//   //     opacity: 1;
-//   //     -webkit-transform: translateX(100%) rotateY(90deg);
-//   //     transform: translateX(100%) rotateY(90deg)
-//   // }
-// }
-// @keyframes enter {
-//   from{
-//     transform: translate3d(10vw,100%,0) rotateX(180deg);
-//     filter: blur(5px);
-//   }
-//   90%{
-//     transform: translate3d(10vw,0,0) rotateX(0);
-//     filter: none;
-//   }
-//   100%{
-//     transform: translate3d(0,0,0) rotateX(0);
-//     backface-visibility: hidden;
-    
-//   }
-//   // to {
-//   //     opacity: 1;
-//   //     -webkit-transform: translateX(100%) rotateY(90deg);
-//   //     transform: translateX(100%) rotateY(90deg)
-//   // }
-// }
-
 
 
 </style>
