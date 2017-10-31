@@ -1,12 +1,33 @@
 {
 	"works": [
 		{
-			"name": "Site 1",
+			"name": "Burgers Delivery",
+			"imgUrl": "./static/img/burger.png"
+		},
+		{
+			"name": "Site 3",
+			"imgUrl": "./static/img/32.png"
+		},
+		{
+			"name": "Site 2",
+			"imgUrl": "./static/img/32.png"
+		},
+		{
+			"name": "Site 4",
+			"imgUrl": "./static/img/32.png"
+		},
+		{
+			"name": "Site 5",
+			"imgUrl": "./static/img/32.png"
+		},
+		{
+			"name": "Site 6",
 			"imgUrl": "./static/img/32.png"
 		},
 		{
 			"name": "Site 3",
 			"imgUrl": "./static/img/32.png"
 		}
+
 	]
 }

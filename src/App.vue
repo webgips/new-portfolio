@@ -89,11 +89,15 @@ body{
      // animation: enter  .85s both cubic-bezier(.6,0,.2,1);
     
      transition: all 1s ease;
+    //   position: relative;
+    // z-index: 1;
   }
   &-enter-to{
     transform: translate(0,0);
     backface-visibility: hidden;
     transition: all 1s ease;
+    //  position: relative;
+    // z-index: ;
   }
   &-leave{
     // opacity: 0;
@@ -103,11 +107,14 @@ body{
     backface-visibility: hidden;
     transition: all 1s ease;
     transform-style: preserve-3d;
+    // position: relative;
+    // z-index: 5;
     // animation: leave  .85s both cubic-bezier(.6,0,.2,1);
   }
   &-leave-to{
     transform: translate(0,-100%);
-    
+    //  position: relative;
+    // z-index: 5;
     transform-style: preserve-3d;
     transition: all 1s ease;
   }
