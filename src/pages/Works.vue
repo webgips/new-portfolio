@@ -47,18 +47,6 @@ export default {
         .catch( alert );
   },
   methods: {
-    // fetchData: function () {
-     
-    //   fetch('./static/data/data.json')
-    //     .then(function(response) {
-    //       return response.json();
-    //      })
-    //     .then(function(data) {
-          
-    //        this.workItems = data.works;
-    //     })
-    //     .catch( alert );
-    // },
     openModal: function (e){
 
       let target = e.currentTarget,
@@ -112,6 +100,11 @@ export default {
         object-fit:contain;
       }
     }
+  }
+}
+.modal{
+  &__img{
+    width: 100%;
   }
 }
 </style>

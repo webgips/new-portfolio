@@ -68,6 +68,9 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
+  @include laptop{
+    padding: 40px 80px;
+  }
   &__wrap{
     position: relative;
     flex: 1;
