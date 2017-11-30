@@ -28,22 +28,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import "./../assets/styles/mixins";
 .about{
   &__content{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    @include tablet{
+      margin-top: 25px;
+    }
   }
   &__name{
     font-family: "proxima_novasemibold";
     font-size: 40px;
     margin-bottom: 20px;
+    @include tablet{
+      font-size: 32px;
+    }
   }
   &__job{
     font-size: 32px;
     font-family:  "proxima_nova_rgregular";
     color: #ff68b6;
     margin-bottom: 40px;
+    @include tablet{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
   &__desc{
     font-family: "proxima_nova_thinthin";
@@ -51,11 +62,22 @@ export default {
     max-width: 600px;
     opacity: .6;
     margin-bottom: 40px;
+    @include tablet{
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
   }
   &__btns{
-    display: flex;    
+    display: flex;
     &-hire{
       margin-right: 30px;
+    }
+   @include phones{
+      display: block;
+      &-hire{
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
     }
   }
   &__btn{
@@ -67,8 +89,15 @@ export default {
     font-size: 24px;
     display: flex;
     align-items: center;
+    max-width: 200px;
+    min-width: 165px;
     &:hover{
       background-color: rgba(255, 75, 168,.4);
+    }
+    @include tablet{
+      font-size: 20px;
+      height: 50px;
+      padding: 0 30px;
     }
   }
 }

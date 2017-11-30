@@ -70,10 +70,12 @@ body{
   bottom: 0;
   @include laptop{
     padding: 40px 80px;
+    padding-right: 40px;
   }
   &__wrap{
     position: relative;
     flex: 1;
+    overflow: hidden;
   }
   &__title{
     color: #fff;
@@ -83,6 +85,9 @@ body{
     display: inline;   
     border-bottom: 3px solid #ff4ba8;
     // margin-bottom: 110px;
+    @include tablet{
+      font-size: 24px;
+    }
   }
 }
 .slide{
