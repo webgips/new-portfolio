@@ -55,7 +55,7 @@ export default {
 		transform: translate(0);
 	}
 	&__arrow{
-		display: block;
+		display: none;
 		position: absolute;
 		top: 50%;
 		right: -50px;
@@ -67,9 +67,9 @@ export default {
 		background-color: #ff4ba8;
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
-		// @include tablet{
-		// 	display: block;
-		// }
+		@include tablet{
+			display: block;
+		}
 		&.hide{
 			display: none;
 		}

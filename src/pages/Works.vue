@@ -85,6 +85,7 @@ export default {
   &__item{
     flex: 0 1 25%;
     margin: 10px;
+    height: 150px;
   }
   &__link{
     display: block;
@@ -92,12 +93,13 @@ export default {
     background-color: rgba(#000,.4);
     box-shadow: 0 5px 12px 3px rgba(#333,.4);
     padding: 10px;
+    height: 100%;
     &-name{
       font-size: 20px;
     }
     &-img{
       width: 100%;
-      height: 100px;
+      height: 80px;
       img{
         width: 100%;
         height: 100%;
