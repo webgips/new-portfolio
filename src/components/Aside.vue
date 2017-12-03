@@ -116,13 +116,12 @@ export default {
 			font-size: 24px;
 			text-decoration: none;
 			position: relative;
+			font-family: "proxima_novasemibold";
 			&:hover{
-				// font-family: "proxima_nova_rgregular";
 				background-color: rgba(#fff, .03);        
 			}
 			&-active{
 				color: #ff4ba8;
-				font-family: "proxima_nova_rgregular";
 				&:before{
 					content: '';
 					width: 10px;

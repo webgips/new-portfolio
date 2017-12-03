@@ -1,7 +1,6 @@
 <template lang="pug">
   #app
     sidebar
-    
     .content__wrap
       transition(name="slide" type="")
         router-view
