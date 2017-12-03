@@ -68,9 +68,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import "./../assets/styles/mixins";
 .contact{
   &__content{
     margin-top: 50px;
+    @include tablet{
+      margin-top: 20px;
+    }
   }
   &__text{
     font-size: 24px;
@@ -93,6 +97,10 @@ export default {
       border-color: rgba(255, 255, 255, .3);
       border-style: solid; 
       background-color: rgba(30, 26, 52,.3);
+      @include tablet{
+        height: 100px;
+        padding: 10px;
+      }
     }
     &-input{
       height: 60px;
@@ -105,6 +113,9 @@ export default {
       border-color: rgba(255, 255, 255, .3);
       border-style: solid; 
       background-color: rgba(30, 26, 52,.3);
+      @include tablet{
+        padding: 0 10px;
+      }
     }
     &-submit.btn{
       border: none;

@@ -67,9 +67,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import "./../assets/styles/mixins";
 .works{
   &__gallery{
     margin-top: 50px;
+    @include tablet{
+      margin-top: 20px;
+    }
   }
   &__list{
     list-style: none;
