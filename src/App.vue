@@ -60,7 +60,7 @@ body{
     color: #fff;
 }
 .content{
-  background-color: rgba(#0a112a,.7);
+ 
   // flex: 1;
   padding: 80px 60px;
   position: absolute;
@@ -76,6 +76,7 @@ body{
     position: relative;
     flex: 1;
     overflow: hidden;
+    background-color: rgba(#0a112a,.7);
   }
   &__title{
     color: #fff;
