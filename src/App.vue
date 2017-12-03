@@ -69,8 +69,7 @@ body{
   right: 0;
   bottom: 0;
   @include laptop{
-    padding: 40px 80px;
-    padding-right: 40px;
+    padding: 40px;
   }
   &__wrap{
     position: relative;
