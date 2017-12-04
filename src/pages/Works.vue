@@ -8,25 +8,46 @@
         //-     .works__link-img
         //-       img(src='../assets/img/32.png')
         //-     .works__link-name Test work
-        li.works__item(v-for="(item, index) in workItems")
-          a.works__link(v-on:click="openModal")
+  
+
+        //- li.works__item(v-for="(item, index) in workItems")
+        //-   a.works__link(v-on:click="openModal")
+        //-     .works__link-img
+        //-       img(:src="item.imgUrl")
+        //-     .works__link-name {{item.name}}
+
+      paginate.paginate-list.works__list(name='workItems', :list='workItems', :per='6')
+        li.works__item(v-for="(item,index) in paginated('workItems')")
+          a.works__link(:href="item.link")
+            //- (v-on:click="openModal")
             .works__link-img
               img(:src="item.imgUrl")
-            .works__link-name {{item.name}}
-    sweet-modal.modal(ref="modal" modal-theme='dark', overlay-theme='dark')
-      .modal__site-name 
-      img.modal__img(src='')
+          .works__link-name {{item.name}}
+      paginate-links(for='workItems', :simple="{\
+                                  next: 'Next »',\
+                                  prev: '« Back'\
+                                  }")
+
+
+
+    //- sweet-modal.modal(ref="modal" modal-theme='dark', overlay-theme='dark')
+    //-   .modal__site-name 
+    //-   img.modal__img(src='')
       
 </template>
 
 <script>
 import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
+import Vue from 'vue'
+import VuePaginate from 'vue-paginate'
+Vue.use(VuePaginate)
 export default {
   name: 'Works',
   data: function () { 
     return {
         name: this.$route.name,
-        workItems: []
+        workItems: [],
+        paginate: ['workItems']
       }
   },
   components: { 
@@ -34,15 +55,15 @@ export default {
      SweetModalTab
  },
   created: function () {
-    // this.data.push(this.fetchData());
     var vue = this;
     fetch('./static/data/data.json')
         .then(function(response) {
           return response.json();
          })
         .then(function(data) {
-          
            vue.workItems = data.works;
+           console.log(vue.workItems);
+           console.log(data.works);
         })
         .catch( alert );
   },
@@ -56,9 +77,7 @@ export default {
           modalSiteName = modal.querySelector('.modal__site-name'),
           modalImg = modal.querySelector('.modal__img');
       modalSiteName.innerText = siteName;
-      // modal.setAttribute('title', siteName);
       modalImg.setAttribute('src', imgUrl);
-      // console.log(imgUrl);
       this.$refs.modal.open()
     }
   }

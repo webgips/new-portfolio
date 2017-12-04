@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 @import "./../assets/styles/mixins";
 .aside{
-	background-color: rgba(#0a112a,1);
+	background-color: rgba(#0a112a,.9);
 	width: 25%;
 	height: 100%;
 	padding: 80px 0 50px;

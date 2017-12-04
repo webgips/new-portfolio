@@ -1,6 +1,40 @@
 {
-	"works": [{
-		"name": "Test",
-		"imgUrl": "./assets/img/32.png"
-	}]
+	"works": [
+		{
+			"name": "Burgers Delivery",
+			"imgUrl": "./static/img/burger.png",
+			"link": "http://webgips.tmweb.ru"
+		},
+		{
+			"name": "Site  dsadsadsadsa 3",
+			"imgUrl": "./static/img/32.png",
+			"link": "http://webgips.tmweb.ru"
+		},
+		{
+			"name": "Site 2",
+			"imgUrl": "./static/img/32.png",
+			"link": "http://webgips.tmweb.ru"
+		},
+		{
+			"name": "Site  dsadsadsadsa 4",
+			"imgUrl": "./ static/img/32.png",
+			"link": "http://webgips.tmweb.ru"
+		},
+		{
+			"name": "Site 5",
+			"imgUrl": "./static/img/32.png",
+			"link": "http://webgips.tmweb.ru"
+		},
+		{
+			"name": "Site 6",
+			"imgUrl": "./static/img/32.png",
+			"link": "http://webgips.tmweb.ru"
+		},
+		{
+			"name": "Site 3",
+			"imgUrl": "./static/img/32.png",
+			"link": "http://webgips.tmweb.ru"
+		}
+
+	]
 }

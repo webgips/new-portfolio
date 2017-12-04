@@ -8,6 +8,7 @@
 
 <script>
 import sidebar from './components/Aside.vue'
+
 export default {  
   components: {
     sidebar
