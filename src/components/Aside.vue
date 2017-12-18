@@ -64,7 +64,7 @@ export default {
 		height: 50px;
 		background: url('../assets/img/aside_arrow.png') no-repeat center;
 		background-size: 50%;
-		background-color: #ff4ba8;
+		background-color: $active;
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
 		@include tablet{
@@ -121,12 +121,13 @@ export default {
 				background-color: rgba(#fff, .03);        
 			}
 			&-active{
-				color: #ff4ba8;
+				// color: #ff4ba8;
+				color: $active;
 				&:before{
 					content: '';
 					width: 10px;
 					height: 100%;
-					background-color: #ff4ba8;
+					background-color: $active;
 					position: absolute;
 					left: 0;
 					top: 0;
