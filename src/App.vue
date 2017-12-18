@@ -42,7 +42,8 @@ body{
     // width: 100vw;    
     min-height: 100%;
     // min-height: 800px;    
-    background: url('./assets/img/bg.png') no-repeat center;
+    background: url('./assets/img/bg2.jpg') no-repeat center;
+    // background: url('./assets/img/bg.png') no-repeat center;
     background-size: cover;
     overflow: hidden;
     margin: 0;

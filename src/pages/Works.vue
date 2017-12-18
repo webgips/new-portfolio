@@ -18,21 +18,26 @@
 
       paginate.paginate-list.works__list(name='workItems', :list='workItems', :per='6')
         li.works__item(v-for="(item,index) in paginated('workItems')")
-          a.works__link(:href="item.link")
-            //- (v-on:click="openModal")
+          a.works__link(v-on:click="openModal" :data-link="item.link")
             .works__link-img
               img(:src="item.imgUrl")
-          .works__link-name {{item.name}}
-      paginate-links(for='workItems', :simple="{\
-                                  next: 'Next »',\
-                                  prev: '« Back'\
-                                  }")
+            .works__link-name {{item.name}}
+      paginate-links(for='workItems', 
+                    :simple="{\
+                      next: 'Next »',\
+                      prev: '« Prev'\
+                      }")
+                    //- :classes="{\
+                    //-   'li': 'paginate-link__item',\
+                    //-   'li > a': 'paginate-links__link'\
+                    //- }")
 
 
 
-    //- sweet-modal.modal(ref="modal" modal-theme='dark', overlay-theme='dark')
-    //-   .modal__site-name 
-    //-   img.modal__img(src='')
+    sweet-modal.modal(ref="modal" modal-theme='dark', overlay-theme='dark')
+      .modal__site-name 
+      a.modal__site-link(href='#' target="_blank")  Link
+      img.modal__img(src='')
       
 </template>
 
@@ -62,21 +67,21 @@ export default {
          })
         .then(function(data) {
            vue.workItems = data.works;
-           console.log(vue.workItems);
-           console.log(data.works);
         })
         .catch( alert );
   },
   methods: {
     openModal: function (e){
-
       let target = e.currentTarget,
           siteName = target.querySelector('.works__link-name').innerText,
+          siteLink = target.getAttribute('data-link'),
           imgUrl = target.querySelector('img').getAttribute('src'),
           modal = document.querySelector('.modal'),
           modalSiteName = modal.querySelector('.modal__site-name'),
+          modalSiteLink = modal.querySelector('.modal__site-link'),
           modalImg = modal.querySelector('.modal__img');
       modalSiteName.innerText = siteName;
+      modalSiteLink.setAttribute('href', siteLink);
       modalImg.setAttribute('src', imgUrl);
       this.$refs.modal.open()
     }
@@ -97,6 +102,7 @@ export default {
   &__list{
     list-style: none;
     display: flex;
+    justify-content: space-around;
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
@@ -104,7 +110,7 @@ export default {
   &__item{
     flex: 0 1 25%;
     margin: 10px;
-    height: 150px;
+    text-align: center;
   }
   &__link{
     display: block;
@@ -112,16 +118,27 @@ export default {
     background-color: rgba(#000,.4);
     box-shadow: 0 5px 12px 3px rgba(#333,.4);
     padding: 10px;
-    height: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include phones{
+      height: 150px;
+    }
     &-name{
       font-size: 20px;
+      @include phones{
+        font-size: 16px;
+      }
     }
     &-img{
       width: 100%;
       height: 80px;
+      overflow: hidden;
       img{
         width: 100%;
-        height: 100%;
+        // height: 100%;
         object-fit:contain;
       }
     }
@@ -131,5 +148,34 @@ export default {
   &__img{
     width: 100%;
   }
+  &__site-link{
+    color: #9ca7ff;
+    text-decoration: none;
+  }
+}
+.paginate-links.workItems {
+  width: 200px;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform:translate(-50%);
+  user-select: none;
+  li{
+    &.disabled a{
+      opacity: .5;
+      cursor: no-drop;
+    }
+    a{
+      cursor: pointer;
+      &:hover{
+        color: $active;
+      }
+    }
+  }
+  
 }
 </style>

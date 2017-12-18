@@ -1,40 +1,57 @@
 {
 	"works": [
 		{
+			"name": "WeeBets corpsite",
+			"imgUrl": "./static/img/works/weebets.png",
+			"link": "https://weebets-d51bd.firebaseapp.com/"
+		},
+		{
+			"name": "WeeBets dashboard",
+			"imgUrl": "./static/img/works/weebets-dashboard.png",
+			"link": "https://dashboard-c2cd9.firebaseapp.com/"
+		},
+		{
+			"name": "Karma.red",
+			"imgUrl": "./static/img/works/karma.png",
+			"link": "https://tokensale.karma.red/"
+		},
+
+		{
+			"name": "Getphuket.ru",
+			"imgUrl": "./static/img/works/getphuket.ru.png",
+			"link": "https://getphuket.ru/"
+		},
+		{
+			"name": "IcePoint.by",
+			"imgUrl": "./static/img/works/icepoint.by.png",
+			"link": "http://icepoint.by"
+		},
+		{
+			"name": "Talkie",
+			"imgUrl": "./static/img/works/talki.admore.by.png",
+			"link": ""
+		},
+		{
+			"name": "Gyroskutery.by",
+			"imgUrl": "./static/img/works/gyroskutery.by.png",
+			"link": "http://gyroskutery.by/"
+		},
+
+		{
+			"name": "Vershina Ufox",
+			"imgUrl": "./static/img/works/vershina-ufox.png",
+			"link": "http://vershina.ufox.by/"
+		},
+		
+		{
+			"name": "Casino Minsk Royal",
+			"imgUrl": "./static/img/works/casino-minsk-royal.ru.png",
+			"link": "http://casino-minsk-royal.ru/"
+		},
+		{
 			"name": "Burgers Delivery",
-			"imgUrl": "./static/img/burger.png",
-			"link": "http://webgips.tmweb.ru"
-		},
-		{
-			"name": "Site 3",
-			"imgUrl": "./static/img/32.png",
-			"link": "http://webgips.tmweb.ru"
-		},
-		{
-			"name": "Site 2",
-			"imgUrl": "./static/img/32.png",
-			"link": "http://webgips.tmweb.ru"
-		},
-		{
-			"name": "Site 4",
-			"imgUrl": "./static/img/32.png",
-			"link": "http://webgips.tmweb.ru"
-		},
-		{
-			"name": "Site 5",
-			"imgUrl": "./static/img/32.png",
-			"link": "http://webgips.tmweb.ru"
-		},
-		{
-			"name": "Site 6",
-			"imgUrl": "./static/img/32.png",
-			"link": "http://webgips.tmweb.ru"
-		},
-		{
-			"name": "Site 3",
-			"imgUrl": "./static/img/32.png",
+			"imgUrl": "./static/img/works/burger.png",
 			"link": "http://webgips.tmweb.ru"
 		}
-
 	]
 }
