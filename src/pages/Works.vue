@@ -16,7 +16,7 @@
         //-       img(:src="item.imgUrl")
         //-     .works__link-name {{item.name}}
 
-      paginate.paginate-list.works__list(name='workItems', :list='workItems', :per='6')
+      paginate.paginate-list.works__list(name='workItems', :list='workItems', :per="windowWidth < 480? 4 : 6")
         li.works__item(v-for="(item,index) in paginated('workItems')")
           a.works__link(v-on:click="openModal" :data-link="item.link")
             .works__link-img
@@ -37,7 +37,8 @@
     sweet-modal.modal(ref="modal" modal-theme='dark', overlay-theme='dark')
       .modal__site-name 
       a.modal__site-link(href='#' target="_blank")  Link
-      img.modal__img(src='')
+      .modal__img-wrap
+        img.modal__img(src='')
       
 </template>
 
@@ -51,6 +52,7 @@ export default {
   data: function () { 
     return {
         name: this.$route.name,
+        windowWidth: '',
         workItems: [],
         paginate: ['workItems']
       }
@@ -70,6 +72,15 @@ export default {
         })
         .catch( alert );
   },
+  mounted() {
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.getWindowWidth);
+
+      //Init
+      this.getWindowWidth()
+    })
+
+  },
   methods: {
     openModal: function (e){
       let target = e.currentTarget,
@@ -84,7 +95,12 @@ export default {
       modalSiteLink.setAttribute('href', siteLink);
       modalImg.setAttribute('src', imgUrl);
       this.$refs.modal.open()
-    }
+    },
+    getWindowWidth(event) {
+        this.windowWidth = document.documentElement.clientWidth;
+
+      console.log(this.windowWidth);
+    },
   }
 }
 </script>
@@ -111,6 +127,9 @@ export default {
     flex: 0 1 25%;
     margin: 10px;
     text-align: center;
+    @include phones{
+      flex: 0 1 40%;
+    }
   }
   &__link{
     display: block;
@@ -123,13 +142,17 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    @include phones{
+    @include tablet{
       height: 150px;
     }
     &-name{
       font-size: 20px;
       @include phones{
-        font-size: 16px;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 80px;
+        display: block;
       }
     }
     &-img{
@@ -148,9 +171,15 @@ export default {
   &__img{
     width: 100%;
   }
+  &__site-name{
+    font-size: 20px;
+    font-family:'proxima_novasemibold';
+  }
   &__site-link{
     color: #9ca7ff;
-    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
   }
 }
 .paginate-links.workItems {
@@ -161,7 +190,7 @@ export default {
   justify-content: space-between;
   position: absolute;
   left: 50%;
-  bottom: 60px;
+  bottom: 40px;
   transform:translate(-50%);
   user-select: none;
   li{

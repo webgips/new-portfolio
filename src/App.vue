@@ -84,7 +84,8 @@ body{
     font-weight: normal;
     font-family: "proxima_novasemibold";
     display: inline;   
-    border-bottom: 3px solid #ff4ba8;
+    border-bottom: 3px solid $active;
+    // border-bottom: 3px solid #ff4ba8;
     // margin-bottom: 110px;
     @include tablet{
       font-size: 24px;
