@@ -22,10 +22,17 @@
 			"link": "https://getphuket.ru/"
 		},
 		{
+			"name": "Laboratoria Coffee",
+			"imgUrl": "./static/img/works/laboratoriacoffee.by.jpg",
+			"link": "https://laboratoriacoffee.by/"
+		},
+		{
 			"name": "IcePoint.by",
 			"imgUrl": "./static/img/works/icepoint.by.png",
 			"link": "http://icepoint.by"
 		},
+		
+
 		{
 			"name": "Talkie",
 			"imgUrl": "./static/img/works/talki.admore.by.png",
