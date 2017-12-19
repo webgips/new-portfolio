@@ -170,10 +170,10 @@ export default {
 	    justify-content: space-around;
 	    padding: 0 20%;
 	    margin-top: 150px;
-	    @include laptop{
+	    @include notebook{
 	    	margin-top: 100px;
 	    }
-	    @include phones{
+	    @include tablet{
 	    	margin-top: 80px;
 	    }
 	}
