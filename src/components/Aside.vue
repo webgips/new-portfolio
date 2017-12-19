@@ -10,7 +10,24 @@
 			router-link.nav__link(v-on:click.native="openMobile()" to='/' exact) About
 			router-link.nav__link(v-on:click.native="openMobile()" to='/works' exact) Work
 			router-link.nav__link(v-on:click.native="openMobile()" to='/contact' exact) Contact 
-		ul.socials
+		ul.socials__list
+			li.socials__item
+				a.socials__link(href="https://vk.com/id6538692" target="_blank")
+					svg.icon
+						svg.icon
+							use(xlink:href="./static/img/socials_sprite.svg#vk-social-logotype")
+			li.socials__item
+				a.socials__link(href="https://t.me/MarkovMaxim" target="_blank")
+					svg.icon
+						svg.icon
+							use(xlink:href="./static/img/socials_sprite.svg#telegram")
+			li.socials__item
+				a.socials__link(href="https://github.com/webgips" target="_blank")
+					svg.icon
+						svg.icon
+							use(xlink:href="./static/img/socials_sprite.svg#github-logo")
+			
+
 
 </template>
 
@@ -143,6 +160,31 @@ export default {
 					top: 0;
 				}
 			}
+		}
+	}
+}
+.socials{
+	&__list{
+		list-style: none;
+		display: flex;
+	    justify-content: space-around;
+	    padding: 0 20%;
+	    margin-top: 150px;
+	    @include laptop{
+	    	margin-top: 100px;
+	    }
+	    @include phones{
+	    	margin-top: 80px;
+	    }
+	}
+	&__link{
+		opacity: .5;
+		svg{
+			width: 20px;
+			height: 20px;
+		}
+		&:hover{
+			opacity: 1;
 		}
 	}
 }
