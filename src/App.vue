@@ -35,6 +35,7 @@ export default {
 }
 body,html{
   height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 body{
@@ -42,23 +43,27 @@ body{
     // width: 100vw;    
     min-height: 100%;
     // min-height: 800px;    
-    background: url('./assets/img/bg2.jpg') no-repeat center;
-    // background: url('./assets/img/bg.png') no-repeat center;
+    background-image: url('./assets/img/bg.jpg');
+    background-repeat:  no-repeat;
+    background-position:  center;
     background-size: cover;
     overflow: hidden;
     margin: 0;
-    font-family: $proxima-nova-light;
+    font-family: "proxima_novalight";
     // @include laptop{
     //   height: auto;
     // }
+    @include phones{
+      background-image: url('./assets/img/bg_mobile.jpg');
+    }
 }
 #app{
     width: 100%;
     height: 100%;    
     // background: url('./assets/img/glassy-effect.png') no-repeat center;
-    background-size: cover;
     display: flex;    
     color: #fff;
+    
 }
 .content{
  
@@ -129,6 +134,30 @@ body{
     transition: all 1s ease;
   }
 }
-
+.paginate-links.workItems {
+  width: 200px;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform:translate(-50%);
+  user-select: none;
+  li{
+    &.disabled a{
+      opacity: .5;
+      cursor: no-drop;
+    }
+    a{
+      cursor: pointer;
+      &:hover{
+        color: $active;
+      }
+    }
+  }
+  
+}
 
 </style>

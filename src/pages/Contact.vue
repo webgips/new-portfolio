@@ -128,7 +128,7 @@ export default {
       display: flex;
       align-items: center;
       &:hover{
-        background-color: rgba(255, 75, 168,.4);
+        background-color: rgba($active,.4);
       }
     }
   }

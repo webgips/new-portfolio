@@ -39,8 +39,9 @@ export default {
 	width: 25%;
 	height: 100%;
 	padding: 80px 0 50px;
-	display: flex;
-	flex-direction: column;
+	display: block;
+	// display: flex;
+	// flex-direction: column;
 	@include laptop{
 		padding: 4% 0;
 	}
@@ -65,8 +66,8 @@ export default {
 		background: url('../assets/img/aside_arrow.png') no-repeat center;
 		background-size: 50%;
 		background-color: $active;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
+	    border-bottom-right-radius: 50%;
+	    border-top-right-radius: 50%;
 		@include tablet{
 			display: block;
 		}
@@ -102,12 +103,22 @@ export default {
 		}
 	}
 	.nav{
-		display: flex;
-		flex-direction: column;
+		display: block;
+		height: 40%;
+		max-height: 400px;
+    	margin-top: 100px;
+		// display: flex;
+		// flex-direction: column;
 		flex: 1;
 		// height: 60%;
+		@include notebook{
+			max-height: 300px;
+		}
+		@include laptop{
+			margin-top: 0;
+		}
 		&__link{      
-			height: 20%;
+			height: 33%;
 			display: flex;
 			align-items: center;
 			// margin-bottom: 20px;

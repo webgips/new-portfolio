@@ -46,6 +46,7 @@
 import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
 import Vue from 'vue'
 import VuePaginate from 'vue-paginate'
+import 'whatwg-fetch'; 
 Vue.use(VuePaginate)
 export default {
   name: 'Works',
@@ -98,8 +99,6 @@ export default {
     },
     getWindowWidth(event) {
         this.windowWidth = document.documentElement.clientWidth;
-
-      console.log(this.windowWidth);
     },
   }
 }
@@ -137,11 +136,14 @@ export default {
     background-color: rgba(#000,.4);
     box-shadow: 0 5px 12px 3px rgba(#333,.4);
     padding: 10px;
-    height: 200px;
+    height: 250px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @include notebook{
+      height: 200px;
+    }
     @include tablet{
       height: 150px;
     }
@@ -157,8 +159,11 @@ export default {
     }
     &-img{
       width: 100%;
-      height: 80px;
+      height: 180px;
       overflow: hidden;
+      @include notebook{
+        height: 80px;
+      }
       img{
         width: 100%;
         // height: 100%;
@@ -182,29 +187,5 @@ export default {
     margin-bottom: 20px;
   }
 }
-.paginate-links.workItems {
-  width: 200px;
-  list-style: none;
-  display: flex;
-  padding: 0;
-  justify-content: space-between;
-  position: absolute;
-  left: 50%;
-  bottom: 40px;
-  transform:translate(-50%);
-  user-select: none;
-  li{
-    &.disabled a{
-      opacity: .5;
-      cursor: no-drop;
-    }
-    a{
-      cursor: pointer;
-      &:hover{
-        color: $active;
-      }
-    }
-  }
-  
-}
+
 </style>

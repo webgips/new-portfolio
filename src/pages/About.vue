@@ -92,7 +92,7 @@ export default {
     max-width: 200px;
     min-width: 165px;
     &:hover{
-      background-color: rgba(255, 75, 168,.4);
+      background-color: rgba($active,.4);
     }
     @include tablet{
       font-size: 20px;
