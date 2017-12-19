@@ -24,7 +24,6 @@ export default {
 	},  
 	methods: {
 		openMobile: function () {
-			console.log(this.showMobileMenu);
 			this.showMobileMenu = !this.showMobileMenu;
 		}
 	}
