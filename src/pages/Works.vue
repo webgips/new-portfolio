@@ -149,6 +149,7 @@ export default {
     }
     &-name{
       font-size: 20px;
+      font-family:'proxima_novasemibold';
       @include phones{
         font-size: 14px;
         text-overflow: ellipsis;

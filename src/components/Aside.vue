@@ -167,13 +167,10 @@ export default {
 	&__list{
 		list-style: none;
 		display: flex;
-	    justify-content: space-around;
+	    justify-content: space-between;
 	    padding: 0 20%;
 	    margin-top: 150px;
 	    @include notebook{
-	    	margin-top: 100px;
-	    }
-	    @include tablet{
 	    	margin-top: 80px;
 	    }
 	}

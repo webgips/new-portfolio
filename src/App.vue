@@ -74,7 +74,7 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
-  @include laptop{
+  @include notebook{
     padding: 40px;
   }
   &__wrap{
