@@ -2,65 +2,68 @@
   .contact.content
     h2.content__title {{name}}
     .contact__content
-      form.contact__form#contact__form(v-on:submit="submitForm")
+      form.contact__form#contact__form(v-on:submit="addMessage")
         .contact__text Project brief description
         .contact__form-row 
-          textarea.contact__form-textarea(name="description" minlength="10" required placeholder="Project Type, Target customer, timeline, estimate etc")
+          textarea.contact__form-textarea(name="description" minlength="10" required v-model="newMessage.descr" placeholder="Project Type, Target customer, timeline, estimate etc")
         .contact__text About You  
         .contact__form-about-wrap
           .contact__form-row
-            input.contact__form-input(type="text" name="name"  minlength="3" required placeholder="Full Name")  
-            input.contact__form-input(type="email" name="email" required placeholder="Email Address")
+            input.contact__form-input(type="text" name="name"  minlength="3" v-model="newMessage.name" required placeholder="Full Name")  
+            input.contact__form-input(type="email" name="email" required v-model="newMessage.email" placeholder="Email Address")
           .contact__form-row
-            input.contact__form-input(type="text" name="company"  placeholder="Company Name")
-            input.contact__form-input(type="text" name="position"  placeholder="Position")
+            input.contact__form-input(type="text" name="company"  v-model="newMessage.company" placeholder="Company Name")
+            input.contact__form-input(type="text" name="position"  v-model="newMessage.position" placeholder="Position")
         button.contact__form-submit.btn(type="submit") Request a Quote  
 
 </template>
 
 <script>
+import Firebase from 'firebase'
+let config = {
+    apiKey: "AIzaSyCFHTIkgFfmZLscAgQuwqfOIi3lvvy65n8",
+    authDomain: "maxim-markov.firebaseapp.com",
+    databaseURL: "https://maxim-markov.firebaseio.com/"
+    // storageBucket: "...",
+    // messagingSenderId: "..."
+  };
+   
+let app = Firebase.initializeApp(config)
+let db = app.database()
+// var auth = app.auth();
+let messagesRef = db.ref('messages')
+
 export default {
   name: 'Contact',
   data: function () { 
     return {
-        name: this.$route.name
+        name: this.$route.name,
+        newMessage: {
+          name: '',
+          email: '',
+          descr: '',
+          company: '',
+          position: ''
+        }
       }
+  },
+  firebase: {
+    messages: messagesRef
   },  
   methods: {
-    submitForm: function(e) {
+    addMessage: function(e) {
       e.preventDefault();
-      // document.getElementById("contact__form").submit();/
-      var headers = {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'X-Secure-Token': '57536be9-79df-47ab-86d5-cdb282cc0fc9'
-      },
-      formData = new FormData(document.getElementById("contact__form")),
-      data = {
-          'from': 'hello@webgips.tmweb.ru',
-          'to': ['webgips@gmail.com'],
-          'subject': 'Hello world!',
-          'html_body': '<html><body>Hello dear user.</body></html>'
-      },
-      // url = 'http://api.mailhandler.ru/message/send/',
-      url = './mail.php'
+     
 
-      fetch(url,{
-         method: 'POST',
-         // headers: headers,
-         body: formData
-      }).then(function(response) {
-          // alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
-          // alert(response.status); // 200
+      messagesRef.push(this.newMessage)
+      this.newMessage.name = '',
+      this.newMessage.email = '',
+      this.newMessage.descr = '',
+      this.newMessage.company = '',
+      this.newMessage.position = ''
 
-          return response.json();
-         })
-        .catch( alert );   
-
-
-
-      console.log('otpvravka')
-    } 
+     
+    }
   }
   
 }

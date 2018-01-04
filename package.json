@@ -10,11 +10,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "firebase": "^4.8.1",
     "sweet-modal-vue": "^2.0.0",
     "vue": "^2.3.3",
     "vue-meta": "^1.2.0",
     "vue-paginate": "^3.5.1",
     "vue-router": "^2.3.1",
+    "vuefire": "^1.4.5",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
